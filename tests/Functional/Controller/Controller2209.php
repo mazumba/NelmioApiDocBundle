@@ -7,7 +7,6 @@ namespace Nelmio\ApiDocBundle\Tests\Functional\Controller;
 use Nelmio\ApiDocBundle\Annotation\Model;
 use Nelmio\ApiDocBundle\Tests\Functional\Entity\Article81;
 use OpenApi\Attributes as OA;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpKernel\Attribute\MapRequestPayload;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -19,7 +18,7 @@ class Controller2209
             ref: new Model(type: Article81::class),
         )),
     )]
-    public function __invoke(#[MapRequestPayload] Article81 $requestDTO): JsonResponse
+    public function __invoke(#[MapRequestPayload] Article81 $requestDTO): void
     {
     }
 }
