@@ -111,7 +111,7 @@ parameters:
 			path: src/Controller/YamlDocumentationController.php
 
 		-
-			message: "#^Argument of an invalid type array\\|bool\\|float\\|int\\|string\\|UnitEnum\\|null supplied for foreach, only iterables are supported\\.$#"
+			message: "#^Argument of an invalid type array\\|bool\\|float\\|int\\|string\\|null supplied for foreach, only iterables are supported\\.$#"
 			count: 1
 			path: src/DependencyInjection/Compiler/TagDescribersPass.php
 
@@ -2101,11 +2101,6 @@ parameters:
 			path: src/Util/ControllerReflector.php
 
 		-
-			message: "#^Comparison operation \"\\>\\=\" between 70004 and 40100 is always true\\.$#"
-			count: 1
-			path: src/Util/ControllerReflector.php
-
-		-
 			message: "#^Method Nelmio\\\\ApiDocBundle\\\\Util\\\\ControllerReflector\\:\\:getClassAndMethod\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/Util/ControllerReflector.php
@@ -2981,7 +2976,7 @@ parameters:
 			path: tests/Functional/Controller/UndocumentedController.php
 
 		-
-			message: "#^Call to an undefined method object\\:\\:generate\\(\\)\\.$#"
+			message: "#^Cannot call method generate\\(\\) on object\\|null\\.$#"
 			count: 1
 			path: tests/Functional/ControllerTest.php
 
@@ -4531,6 +4526,26 @@ parameters:
 			path: tests/Functional/FOSRestTest.php
 
 		-
+			message: "#^Call to method PHPUnit\\\\Framework\\\\Assert\\:\\:assertSame\\(\\) with '@OA\\\\\\\\Generator\\:…' and OpenApi\\\\Annotations\\\\Post will always evaluate to false\\.$#"
+			count: 1
+			path: tests/Functional/FunctionalTest.php
+
+		-
+			message: "#^Call to method PHPUnit\\\\Framework\\\\Assert\\:\\:assertSame\\(\\) with '@OA\\\\\\\\Generator\\:…' and array\\<OpenApi\\\\Annotations\\\\Property\\> will always evaluate to false\\.$#"
+			count: 4
+			path: tests/Functional/FunctionalTest.php
+
+		-
+			message: "#^Call to method PHPUnit\\\\Framework\\\\Assert\\:\\:assertSame\\(\\) with '@OA\\\\\\\\Generator\\:…' and array\\<string\\> will always evaluate to false\\.$#"
+			count: 1
+			path: tests/Functional/FunctionalTest.php
+
+		-
+			message: "#^Call to method PHPUnit\\\\Framework\\\\Assert\\:\\:assertSame\\(\\) with '@OA\\\\\\\\Generator\\:…' and bool will always evaluate to false\\.$#"
+			count: 3
+			path: tests/Functional/FunctionalTest.php
+
+		-
 			message: "#^Cannot access offset 'application/json' on array\\<OpenApi\\\\Annotations\\\\Attachable\\|OpenApi\\\\Annotations\\\\JsonContent\\|OpenApi\\\\Annotations\\\\MediaType\\|OpenApi\\\\Annotations\\\\XmlContent\\>\\|OpenApi\\\\Annotations\\\\Attachable\\|OpenApi\\\\Annotations\\\\JsonContent\\|OpenApi\\\\Annotations\\\\MediaType\\|OpenApi\\\\Annotations\\\\XmlContent\\.$#"
 			count: 2
 			path: tests/Functional/FunctionalTest.php
@@ -4931,6 +4946,11 @@ parameters:
 			path: tests/Functional/SwaggerUiTest.php
 
 		-
+			message: "#^You should use assertCount\\(\\$expectedCount, \\$variable\\) instead of assertSame\\(\\$expectedCount, \\$variable\\-\\>count\\(\\)\\)\\.$#"
+			count: 1
+			path: tests/Functional/SwaggerUiTest.php
+
+		-
 			message: "#^Cannot access offset 'parameters' on mixed\\.$#"
 			count: 4
 			path: tests/Functional/SymfonyFunctionalTest.php
@@ -5021,7 +5041,7 @@ parameters:
 			path: tests/Functional/WebTestCase.php
 
 		-
-			message: "#^Call to an undefined method object\\:\\:generate\\(\\)\\.$#"
+			message: "#^Cannot call method generate\\(\\) on object\\|null\\.$#"
 			count: 1
 			path: tests/Functional/WebTestCase.php
 
@@ -5781,6 +5801,11 @@ parameters:
 			path: tests/ModelDescriber/Fixtures/SelfDescribingModel.php
 
 		-
+			message: "#^Call to method PHPUnit\\\\Framework\\\\Assert\\:\\:assertSame\\(\\) with '@OA\\\\\\\\Generator\\:…' and array\\<OpenApi\\\\Annotations\\\\Property\\> will always evaluate to false\\.$#"
+			count: 1
+			path: tests/ModelDescriber/FormModelDescriberTest.php
+
+		-
 			message: "#^Method Nelmio\\\\ApiDocBundle\\\\Tests\\\\ModelDescriber\\\\FormModelDescriberTest\\:\\:provideCsrfProtectionOptions\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/ModelDescriber/FormModelDescriberTest.php
@@ -6072,6 +6097,11 @@ parameters:
 
 		-
 			message: "#^Access to an undefined property object\\:\\:\\$components\\.$#"
+			count: 1
+			path: tests/SwaggerPhp/UtilTest.php
+
+		-
+			message: "#^Call to method PHPUnit\\\\Framework\\\\Assert\\:\\:assertSame\\(\\) with array\\<string, mixed\\> and stdClass will always evaluate to false\\.$#"
 			count: 1
 			path: tests/SwaggerPhp/UtilTest.php
 
